@@ -1,30 +1,35 @@
 # ClipsTube
 
-A browser-based recreation of the **2020-era YouTube desktop experience**, with a companion creator dashboard inspired by YouTube Studio as it existed around 2020.
+ClipsTube is being rebuilt as a real video-sharing web application, with a close visual reference to YouTube's 2020 desktop layout and a separate creator Studio. The interface uses original ClipsTube branding and assets.
 
-## Current prototype
+## Current implementation
 
-- 2020-inspired viewer layout: top search bar, left navigation, topic chips and compact video grid.
-- Video watch page with player placeholder, title, views/date, like/share/save actions, channel row, description and Up Next list.
-- Search and category filtering.
-- Dark theme toggle and responsive layout.
-- Creator Studio-style dashboard with sidebar navigation, overview cards, content table, analytics chart, comments, subtitles, copyright, monetization and settings sections.
+- Next.js App Router application (not a GitHub Pages static site).
+- Supabase SSR client setup with cookie-based sessions.
+- Email/password sign-up and sign-in actions.
+- Supabase-backed public video feed and watch route.
+- Responsive 2020-inspired navigation, category bar, video cards and Studio dashboard.
+- Database schema and Row Level Security for profiles, channels, videos, subscriptions, likes, comments, playlists and reports.
+- Preview feed is explicitly labelled when there are no published database videos.
 
-## Run it
+## Run locally
 
-This is a static site. Open `index.html` in a browser, or enable GitHub Pages for the repository and publish from the `main` branch / root folder.
+1. Install Node.js 22 or later.
+2. Copy `.env.example` to `.env.local`.
+3. Add the ClipsTube Supabase Project URL and publishable key from Project Settings → API.
+4. Run `npm install`, then `npm run dev`.
+5. Open http://localhost:3000.
 
-## Current limitations
+Never commit `.env.local`, database passwords, Supabase secret keys, or video-provider API tokens.
 
-This first commit is a visual and interaction prototype. The videos, channel statistics, comments and analytics are sample data. The player is a visual placeholder; there is no account system, upload pipeline, real video hosting, persistent database, or live analytics yet.
+## Deployment
 
-## Historical design references
+Deploy this as a Next.js application (for example, Vercel or another Node.js host). GitHub Pages cannot run the server-side authentication and upload routes required by this app. The original root `index.html` is retained temporarily as a static design reference; it is not the production app.
 
-- [YouTube: Introducing a fresh new look for YouTube on desktop and tablets (Nov. 7, 2019)](https://blog.youtube/news-and-events/introducing-fresh-new-look-for-youtube/) — describes the larger thumbnails, longer titles and channel icons that carried into the 2020 desktop experience.
-- [PageRewind: YouTube homepage history](https://www.pagerewind.com/youtube) — includes a June 16, 2020 homepage capture.
-- [9to5Google: YouTube kills off its classic desktop interface (Feb. 4, 2020)](https://9to5google.com/2020/02/04/youtube-classic-desktop-interface-killed/) — distinguishes the retired pre-Material classic interface from the 2020-era interface.
-- [vidIQ: How to switch back to the old YouTube layout / Creator Studio Classic (Mar. 10, 2020)](https://vidiq.com/blog/post/how-to-switch-back-old-youtube-layout-creator-studio/) — documents the transition from Creator Studio Classic to Studio Beta.
-- [YouTube Help: Navigate YouTube Studio](https://support.google.com/youtube/answer/7548152?hl=en-GB) — reference for the creator dashboard's main navigation and management areas.
-- [NASA Johnson YouTube Studio channel-content capture (2020)](https://documents2.theblackvault.com/documents/youtube/nasa-youtube.pdf) — a contemporaneous example of the content table and its columns.
+## Not implemented yet
 
-The project uses the **ClipsTube** name and sample content; it is an independent fan-made interface recreation and is not affiliated with YouTube or Google.
+Real video upload/transcoding, playback delivery, provider webhooks, thumbnail storage policies, interactive likes/comments/subscriptions, secure view-count tracking, moderation queue and admin roles, appeals, abuse prevention, and production analytics. These must be implemented and tested before being advertised as working features.
+
+## Safety and launch requirements
+
+Do not open public uploads until operational moderation, reporting, appeal handling, abuse prevention, privacy controls, and age-appropriate defaults are in place. A public user-to-user video platform needs review of applicable UK online-safety and data-protection duties with a responsible adult and qualified advice.
