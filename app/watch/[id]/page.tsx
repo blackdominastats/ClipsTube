@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {createClient} from "@/lib/supabase/server";
 import {ThumbsUp,ThumbsDown,Share2,ListPlus,MoreHorizontal,Menu,Search,Bell} from "lucide-react";
-const examples=[
+const examples:Array<{title:string;channel:string;label:string;image:string;duration?:string}>=[
  {title:"PE With Joe | Monday 23rd March 2020",channel:"The Body Coach TV",label:"UK top video · 2020",image:"photo-1518611012118-696072aa579a"},
  {title:"Sidemen Reunited Mukbang",channel:"Sidemen",label:"UK top video · 2020",image:"photo-1547592180-85f173990554"},
  {title:"I’m Coming Out.",channel:"NikkieTutorials",label:"UK top video · 2020",image:"photo-1524504388940-b1c1722653e1"},

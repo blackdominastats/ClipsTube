@@ -3,7 +3,7 @@ import {Search,Menu,Video,Bell,Home,Flame,PlaySquare,Clock3,History,ThumbsUp,Mus
 import {createClient} from "@/lib/supabase/server";
 import {signOut} from "@/lib/actions";
 
-const sample=[
+const sample:Array<{id?:string;title:string;channel:string;tag:string;image:string;duration?:string;avatar?:string}>=[
  {title:"PE With Joe | Monday 23rd March 2020",channel:"The Body Coach TV",tag:"UK top video · 2020",image:"photo-1518611012118-696072aa579a"},
  {title:"Sidemen Reunited Mukbang",channel:"Sidemen",tag:"UK top video · 2020",image:"photo-1547592180-85f173990554"},
  {title:"Phillip Schofield opens up about being gay",channel:"This Morning",tag:"UK top video · 2020",image:"photo-1525186402429-b4ff38bedec6"},
