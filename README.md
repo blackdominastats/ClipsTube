@@ -11,11 +11,21 @@ ClipsTube is a real video-sharing web application in development. Its visual tar
 - In March 2020, creators could still switch back to Creator Studio Classic from Studio Beta; the newer Studio Beta was the recommended interface.
 - The 2020 desktop watch page retained the classic layout: video player and title/details in the main column, recommendations in the right rail, with channel information, actions, description and comments below the player.
 
+## Primary and historical references
+
+- YouTube Blog, [Introducing a fresh new look for YouTube on desktop and tablets](https://blog.youtube/news-and-events/introducing-fresh-new-look-for-youtube/) (November 7, 2019).
+- PageRewind, [YouTube homepage history](https://www.pagerewind.com/youtube), including a June 16, 2020 capture.
+- Scribd-hosted transcription of a [May 27, 2020 YouTube homepage screenshot](https://www.scribd.com/document/463182511/YT-today-screenshot).
+- The Guardian, [Joe Wicks tops YouTube list of most popular UK videos in 2020](https://www.theguardian.com/technology/2020/dec/14/joe-wicks-video-most-popular-youtube-2020).
+- YouTube Blog, [2020’s top-trending videos and creators](https://blog.youtube/culture-and-trends/2020-top-trending-youtube-videos-creators/).
+- Lehman College, [YouTube Guide (May 2020)](https://www.lehman.edu/media/School-of-Education/education-technology/documents/YoutubeGuide-2.pdf), with a contemporaneous Studio channel-videos screenshot.
+- vidIQ, [How to Switch Back To the Old YouTube Layout (Creator Studio)](https://vidiq.com/blog/post/how-to-switch-back-old-youtube-layout-creator-studio/) (March 10, 2020).
+
 ## 2020 video catalogue samples
 
-The preview catalogue uses titles from YouTube's 2020 UK trending list, including The Body Coach's PE with Joe, Sidemen Reunited Mukbang, NikkieTutorials' I'm Coming Out, WillNE's All Star video, Sky Sports Boxing, MrBeast's influencer tournament, Britain's Got Talent, and BT Sport's Barcelona v Bayern highlights. Additional globally trending examples include Mark Rober's squirrel-proof bird feeder, Dream's Minecraft speedrunner finale, and Jeffree Star's We Broke Up.
+The preview catalogue uses titles from the Guardian's report of YouTube's 2020 top UK videos, including The Body Coach's PE with Joe, Sidemen Reunited Mukbang, NikkieTutorials' I'm Coming Out, WillNE's All Star video, Sky Sports Boxing, MrBeast's influencer tournament, Britain's Got Talent, and BT Sport's Barcelona v Bayern highlights. Additional globally trending examples include Mark Rober's squirrel-proof bird feeder, Dream's Minecraft speedrunner finale, and Jeffree Star's We Broke Up.
 
-These are clearly labelled sample catalogue entries. Their thumbnails are illustrative, not the original video thumbnails, and the sample catalogue does not claim to be a live or complete archive of 2020 YouTube.
+These are clearly labelled sample catalogue entries. Their thumbnails are illustrative, not the original video thumbnails; no unsupported view counts or durations are fabricated. The sample catalogue does not claim to be a live or complete archive of 2020 YouTube.
 
 ## Current implementation
 

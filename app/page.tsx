@@ -4,18 +4,18 @@ import {createClient} from "@/lib/supabase/server";
 import {signOut} from "@/lib/actions";
 
 const sample=[
- {title:"PE With Joe | Monday 23rd March 2020",channel:"The Body Coach TV",tag:"UK trending · 2020",image:"photo-1518611012118-696072aa579a",duration:"30:02"},
- {title:"Sidemen Reunited Mukbang",channel:"Sidemen",tag:"UK trending · 2020",image:"photo-1547592180-85f173990554",duration:"34:18"},
- {title:"Phillip Schofield opens up about being gay",channel:"This Morning",tag:"UK trending · 2020",image:"photo-1525186402429-b4ff38bedec6",duration:"8:42"},
- {title:"I’m Coming Out.",channel:"NikkieTutorials",tag:"UK trending · 2020",image:"photo-1524504388940-b1c1722653e1",duration:"17:13"},
- {title:"Making YouTubers Sing All Star Without Realising",channel:"WillNE",tag:"UK trending · 2020",image:"photo-1516280440614-37939bbacd81",duration:"18:55"},
- {title:"Full Fight! Jake Paul vs AnEsonGib",channel:"Sky Sports Boxing",tag:"UK trending · 2020",image:"photo-1549719386-74dfcbf7dbed",duration:"12:41"},
- {title:"$250,000 Influencer Rock, Paper, Scissors Tournament",channel:"MrBeast",tag:"UK trending · 2020",image:"photo-1521412644187-c49fa049e84d",duration:"17:26"},
- {title:"Golden Buzzer! Sign Along With Us",channel:"Britain’s Got Talent",tag:"UK trending · 2020",image:"photo-1516280440614-37939bbacd81",duration:"6:20"},
- {title:"Barcelona v Bayern Munich (2-8) Highlights",channel:"BT Sport",tag:"UK trending · 2020",image:"photo-1522778119026-d647f0596c20",duration:"9:31"},
- {title:"We Broke Up",channel:"Jeffree Star",tag:"Trending · 2020",image:"photo-1517841905240-472988babdf9",duration:"17:15"},
- {title:"Building the Perfect Squirrel Proof Bird Feeder",channel:"Mark Rober",tag:"Trending · 2020",image:"photo-1444464666168-49d633b86797",duration:"21:39"},
- {title:"Minecraft Speedrunner VS 3 Hunters GRAND FINALE",channel:"Dream",tag:"Trending · 2020",image:"photo-1607513746994-51f730a44832",duration:"41:38"}
+ {title:"PE With Joe | Monday 23rd March 2020",channel:"The Body Coach TV",tag:"UK top video · 2020",image:"photo-1518611012118-696072aa579a"},
+ {title:"Sidemen Reunited Mukbang",channel:"Sidemen",tag:"UK top video · 2020",image:"photo-1547592180-85f173990554"},
+ {title:"Phillip Schofield opens up about being gay",channel:"This Morning",tag:"UK top video · 2020",image:"photo-1525186402429-b4ff38bedec6"},
+ {title:"I’m Coming Out.",channel:"NikkieTutorials",tag:"UK top video · 2020",image:"photo-1524504388940-b1c1722653e1"},
+ {title:"Making YouTubers Sing All Star Without Realising",channel:"WillNE",tag:"UK top video · 2020",image:"photo-1516280440614-37939bbacd81"},
+ {title:"Full Fight! Jake Paul vs AnEsonGib",channel:"Sky Sports Boxing",tag:"UK top video · 2020",image:"photo-1549719386-74dfcbf7dbed"},
+ {title:"$250,000 Influencer Rock, Paper, Scissors Tournament",channel:"MrBeast",tag:"UK top video · 2020",image:"photo-1521412644187-c49fa049e84d"},
+ {title:"Golden Buzzer! Sign Along With Us",channel:"Britain’s Got Talent",tag:"UK top video · 2020",image:"photo-1516280440614-37939bbacd81"},
+ {title:"Barcelona v Bayern Munich (2-8) Highlights",channel:"BT Sport",tag:"UK top video · 2020",image:"photo-1522778119026-d647f0596c20"},
+ {title:"We Broke Up",channel:"Jeffree Star",tag:"Trending · 2020",image:"photo-1517841905240-472988babdf9"},
+ {title:"Building the Perfect Squirrel Proof Bird Feeder",channel:"Mark Rober",tag:"Trending · 2020",image:"photo-1444464666168-49d633b86797"},
+ {title:"Minecraft Speedrunner VS 3 Hunters GRAND FINALE",channel:"Dream",tag:"Trending · 2020",image:"photo-1607513746994-51f730a44832"}
 ];
 const sections=[["Home",Home,"/"],["Trending",Flame,"/?category=trending"],["Subscriptions",PlaySquare,"/?category=subscriptions"]];
 const best=[["Music",Music2],["Sports",Trophy],["Gaming",Gamepad2],["Movies & Shows",Film],["News",Newspaper],["Live",Radio],["Learning",Lightbulb]];
@@ -31,7 +31,7 @@ export default async function HomePage({searchParams}:{searchParams:Promise<{q?:
  <aside className="yt20-sidebar"><div className="yt20-side-group">{sections.map(([name,Icon,href],i)=>{const I=Icon as any;return <Link key={name as string} href={href as string} className={(!cat&&i===0)||(cat===String(name).toLowerCase())?"yt20-side active":"yt20-side"}><I size={20}/><span>{name as string}</span></Link>})}</div><div className="yt20-side-group"><Link href="/?category=library" className="yt20-side"><History size={20}/><span>Library</span></Link><Link href="/?category=history" className="yt20-side"><Clock3 size={20}/><span>History</span></Link><Link href="/?category=watch-later" className="yt20-side"><Clock3 size={20}/><span>Watch later</span></Link><Link href="/?category=liked" className="yt20-side"><ThumbsUp size={20}/><span>Liked videos</span></Link></div><div className="yt20-side-group"><h3>BEST OF CLIPSTUBE</h3>{best.map(([name,Icon])=>{const I=Icon as any;return <Link key={name as string} href={`/?category=${String(name).toLowerCase().replaceAll(" ","-")}`} className="yt20-side"><I size={20}/><span>{name as string}</span></Link>})}<button className="yt20-side"><ChevronDown size={20}/><span>Show more</span></button></div><div className="yt20-side-footer">About · Press · Copyright<br/>Contact us · Creators<br/>Advertise · Developers<br/><br/>Terms · Privacy · Policy &amp; Safety<br/><small>© 2020 ClipsTube archive-style preview</small></div></aside>
  <main className="yt20-main"><div className="yt20-content">{!live&&<div className="yt20-preview"><b>2020-style preview</b><span>Sample titles are based on videos that trended in the UK during 2020. Thumbnails are illustrative, not the original creators’ artwork.</span></div>}
  {p.q?<div className="yt20-section-head"><h1>Search results</h1><span>For “{p.q}”</span></div>:<div className="yt20-section-head"><h1>{cat?String(cat).replaceAll("-"," ").replace(/^./,c=>c.toUpperCase()):"Recommended"}</h1><span>{live?"Latest public uploads":"A snapshot of popular 2020-era videos"}</span></div>}
- {filtered.length?<div className="yt20-grid">{filtered.map((v:any,i)=><Link className="yt20-video" href={v.id?"/watch/"+v.id:"/watch/demo"} key={v.id??v.title}><div className="yt20-thumb">{v.image?<img src={v.image.startsWith("http")?v.image:`https://images.unsplash.com/${v.image}?auto=format&fit=crop&w=560&q=80`} alt=""/>:<div className="yt20-thumb-fallback"/>}<span className="yt20-duration">{v.duration}</span></div><div className="yt20-video-meta"><div className="yt20-avatar">{v.avatar}</div><div className="yt20-video-copy"><h2>{v.title}</h2><p>{v.channel}</p><p>{v.tag}</p></div><button className="yt20-more" aria-label="More options">⋮</button></div></Link>)}</div>:<div className="yt20-empty">No videos found.</div>}
+ {filtered.length?<div className="yt20-grid">{filtered.map((v:any,i)=><Link className="yt20-video" href={v.id?"/watch/"+v.id:"/watch/demo"} key={v.id??v.title}><div className="yt20-thumb">{v.image?<img src={v.image.startsWith("http")?v.image:`https://images.unsplash.com/${v.image}?auto=format&fit=crop&w=560&q=80`} alt=""/>:<div className="yt20-thumb-fallback"/>}{v.duration&&<span className="yt20-duration">{v.duration}</span>}</div><div className="yt20-video-meta"><div className="yt20-avatar">{v.avatar}</div><div className="yt20-video-copy"><h2>{v.title}</h2><p>{v.channel}</p><p>{v.tag}</p></div><span className="yt20-more" aria-hidden="true">⋮</span></div></Link>)}</div>:<div className="yt20-empty">No videos found.</div>}
  <div className="yt20-shelf-title"><h2>Trending in 2020</h2><Link href="/?category=trending">SEE ALL</Link></div><div className="yt20-shelf-note">A selection of UK and global trending titles from the year, shown as sample catalogue entries.</div>
  </div></main></div>;
 }
