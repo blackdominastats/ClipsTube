@@ -30,6 +30,8 @@ A GitHub Actions workflow at `.github/workflows/pages.yml` deploys the repositor
 
 In the repository's **Settings → Pages**, set **Build and deployment → Source** to **GitHub Actions** if it is not already selected.
 
+In Supabase **Authentication → URL Configuration**, set the Site URL to `https://blackdominastats.github.io/ClipsTube/` and add that same address to the allowed redirect URLs so email confirmations return to the Pages site.
+
 The public Supabase project URL and publishable key are embedded in `app.js`. Publishable keys are designed for browser use; never put a Supabase secret/service-role key in this repository. Database and Storage Row Level Security are required for safety.
 
 ## Current media limits and remaining production work
